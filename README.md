@@ -47,3 +47,15 @@
  $ gcc main.c -o prog -lcalculator -static 
  ```
  ![GitHub Logo](/images/5.png)
+ ## Step 6 : 
+### Creation of dynamic linux library .
+```console
+ $ gcc -c -fPIC fonction.c
+ $ nm fonction.o
+ $ gcc -o libcalculator.so -shared fonction.o
+ $ sudo cp libcalculator.so /usr/lib/
+ $ sudo ldconfig
+ $ gcc main.c -o prog -lcalculator
+ $ ./prog
+```
+![GitHub Logo](/images/6.png)
